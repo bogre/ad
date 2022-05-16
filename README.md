@@ -23,20 +23,21 @@ Main issue for me here was to acomplish compile time calculations, in order to\
 finish that, I used gcem as 3pty lib for compiletime mathematics, as an example.\
 Regarding tests, I made simple test, w/o using any particular framework, but
 I can do that if needed with my prefered catch2 with cmake integration,for example, or any other.\
-C++20 standard is used and compiled with gcc12 with -fno-bultins as wel as woth Visual studio 2022.\
+C++20 standard is used and compiled with gcc12 with -fno-bultins as well as with Visual studio 2022.\
 I compiled with asan and ubsan and runing it, experiencing no issues.\
-As a solution, alpha finction has signature:\
+As a solution, alpha function has signature:\
+\
 void alpha(decimal_type T, std::span<const decimal_type> Tc,\
            std::span<const decimal_type> omega, std::size_t H,\
            ResultDataSet result)\
-where is\n
-using ResultSet = std::array<decimal_type, No>;
-using ResultDataSet = std::span<ResultSet>;
+where is\
+using ResultSet = std::array<decimal_type, No>;\
+using ResultDataSet = std::span<ResultSet>;\
 \
-Also clang-tidy is used as static analizer, and t is ingreted with cmake as
+Also clang-tidy is used as static analizer, and it is integrated with cmake as\
 target for static analisys, one can run it with\
 make -C ./build/out clang-tidy-check. (for linux, of course)\
-Tidy complains with "no str() member in iostream", but source construction should
+Tidy complains with "no str() member in iostream", but source construction should\
 work with c++20. All other warning and complains comming from 3pty.\
 \
 Finally, you can find screenshot below, with result of executed srk binary for\
