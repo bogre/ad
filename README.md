@@ -31,8 +31,8 @@ void alpha(decimal_type T, std::span<const decimal_type> Tc,\
            std::span<const decimal_type> omega, std::size_t H,\
            ResultDataSet result)\
 where is\
-using ResultSet = std::array<decimal_type, No>;\
-using ResultDataSet = std::span<ResultSet>;\
+using ResultSet = std::array<decimal_type, No>\
+using ResultDataSet = std::span\<ResultSet>\
 \
 Also clang-tidy is used as static analizer, and it is integrated with cmake as\
 target for static analisys, one can run it with\
