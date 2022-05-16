@@ -17,3 +17,7 @@ target_include_directories(srk PUBLIC 3pty 3pty/boost)
 target_link_options(srk PUBLIC
     # -fsanitize=address,undefined
 )
+add_custom_target(
+    clang-tidy-check clang-tidy -p ${CMAKE_BINARY_DIR}/compile_commands.json -checks=cert* ${PROJECT_SOURCE_DIR}/main_ad.cpp
+    )
+add_custom_target(check DEPENDS clang-tidy-check)
