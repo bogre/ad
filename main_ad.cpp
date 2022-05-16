@@ -1,4 +1,3 @@
-//#include <autodiff/forward/dual.hpp>
 #include <autodiff/reverse/var.hpp>
 #include <gcem/gcem.hpp>
 #include <iomanip>
@@ -6,6 +5,8 @@
 #include <iterator>
 #include <span>
 #include <algorithm>
+#include <unordered_map>
+
 using namespace autodiff;
 
 template<typename Type>
@@ -84,13 +85,6 @@ auto calculateVars(var T, std::span<const decimal_type> Tc, std::span<const deci
     }
     return arr;
 }
-
-/*typedef dual (*rt_ftype)(dual, decimal_type, decimal_type);
-dual alpha_elem(dual T, const numeric_type auto Tc, const numeric_type auto omega)
-{
-    const auto r = 1 + (c1 + c2 * omega - c3 * omega * omega) * (1 - sqrt(T / Tc));
-    return r * r;
-}*/
 
 template<typename C, typename Ttype>
 void printData(const C& c, const Ttype T, const std::size_t order)
