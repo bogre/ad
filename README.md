@@ -19,10 +19,11 @@ forward dual type as well for first derivate.\
 Main issue for me here was to acomplish compile time calculations, in order to\
 finish that I used gcem as 3pty lib for compiletime mathematics, as an example.\
 Regarding tests, I made simple test, w/o using any particular framework, but
-I can do that if needed with my prefered catch2 with cmake integration,for example, or any other.
+I can do that if needed with my prefered catch2 with cmake integration,for example, or any other.\
+C++20 standard is used and compiled with gcc12 with -fno-bultins as wel as woth Visual studio 2022.
 Finally, you can find screenshot below, with result of executed srk binary for\
-task 1 and 2.
-Task3 is still work in progres, and I will pushed it soon.
+task 1 and 2.\
+Task3 is still work in progres, and I will pushed it soon.\
 # build
 git clone https://github.com/bogre/ad.git\
 cd ad
