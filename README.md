@@ -27,8 +27,8 @@ C++20 standard is used and compiled with gcc12 with -fno-bultins as well as with
 I compiled with asan and ubsan and runing it, experiencing no issues.\
 As a solution, alpha function has signature:\
 \
-void alpha(decimal_type T, std::span<const decimal_type> Tc,\
-           std::span<const decimal_type> omega, std::size_t H,\
+void alpha(decimal_type T, std::span\<const decimal_type> Tc,\
+           std::span\<const decimal_type> omega, std::size_t H,\
            ResultDataSet result)\
 where is\
 using ResultSet = std::array<decimal_type, No>\
