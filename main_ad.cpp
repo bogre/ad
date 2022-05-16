@@ -111,7 +111,7 @@ void printData(const C& c, const Ttype T, const std::size_t order)
 using ResultSet = std::array<decimal_type, No>;
 using ResultDataSet = std::span<ResultSet>;
 void alpha(decimal_type T, std::span<const decimal_type> Tc,
-           std::span<const decimal_type> omega, std::size_t H,
+           std::span<const decimal_type> omega, const std::size_t H,
            ResultDataSet result)
 {
     const auto resultDataSetSize = result.size();

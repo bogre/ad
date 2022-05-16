@@ -28,7 +28,7 @@ Compilation has been preformed with asan and ubsan and after runing it, experien
 As a solution, alpha function has signature:\
 \
 void alpha(decimal_type T, std::span\<const decimal_type> Tc,\
-           std::span\<const decimal_type> omega, std::size_t H,\
+           std::span\<const decimal_type> omega, const std::size_t H,\
            ResultDataSet result)\
 where is\
 using ResultSet = std::array<decimal_type, No>\
