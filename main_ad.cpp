@@ -70,7 +70,8 @@ constexpr std::array<std::pair<decimal_type, std::array<decimal_type, No>>, CTCR
     {std::pair{decimal_type(300), calculateAlphas(decimal_type(300), HIndex)},
      {None, {}}};
 
-auto calculateVars(var T, std::span<const decimal_type> Tc, std::span<const decimal_type> Os, const std::size_t H)
+template<typename Ttype, typename TcType, typename OmegaType>
+auto calculateVars(const Ttype T, std::span<const TcType> Tc, std::span<const OmegaType> Os, const std::size_t H)
 {
     std::array<var, No> arr;
     auto omega = Os.begin();

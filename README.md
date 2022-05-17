@@ -42,9 +42,31 @@ work with c++20. All other warnings and complains are comming from 3pty.\
 \
 Finally, you can find screenshot below, with result of executed srk binary for\
 task 1 and 2.\
-Task3 is still work in progres, and it will be pushed, soon.\
+
+Optional clause for task2, e.g. derivation w.r.t T and MODEL PARAMETERS is\
+supported by calculateVars function, because types for MODEL PARAMETERS Tc and\
+omega are parameterized as template type parameters\
+and this means that we can provide var type for Tc and omega as well.\
+Further template arguments substitution will deduce type of template arguments,\
+such that derivation can be calculated with MODEL PARAMETERS as well, \
+and modified call would look like this: \
+\
+var Tt = T, TC = Tc[i], Omega = omega[i]; \
+auto rtelem = calculateVars(Tt, TC, Omega, H); \
+auto [d_T, d_Tc, d_Omega] = derivatives(calculateVars, wrt(Tt, TC, Omega));
+
+where d_* are derivates with respect to vars, \
+i is index of an element, and H is index of Hydrogen
+
+task3 is supported as well, cause function alpha takes spans of Tcs and omegas and \
+iterate through collection providing values for corresponding elements. \
+In order to provide calculations for any TC and Omega, we need to provide \
+alternative values of tcs and omegas in some collection, which spans will be \
+constructed to view on.
+
+
 # build
-git clone https://github.com/bogre/ad.git\
+git clone https://github.com/bogre/ad.git \
 cd ad
 
 for linux execute commands:\
